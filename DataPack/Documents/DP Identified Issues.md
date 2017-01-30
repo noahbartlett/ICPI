@@ -19,7 +19,7 @@ Here is a running list of issues that affect the Data Pack for SI and EA advisor
     - Fix:
         1. SI advisors were identified regarding this issue, and provided either (a) the rows in column X to add KP_MAT % to if <5 rows affected, or (b) were issued new Data Packs and can be found on PEPFAR.net
 3. VMMC included in EA HTC calculation
-    - Issue: For the purposes of EA, VMMC and PMTCT test needs to be removed from the HTC to ensure we're not double counting those expenses in our Unit Expenditures. VMMC was mistakenly included in HTC total.
+    - Issue: For the purposes of EA, VMMC and PMTCT test needs to be removed from the HTC to ensure we are not double counting those expenses in our Unit Expenditures. VMMC was mistakenly included in HTC total.
     - Affected Tab: SNU Targets for EA
     - Fix:
         1. Navigate to the HTC Target Calculation tab
@@ -42,3 +42,12 @@ Here is a running list of issues that affect the Data Pack for SI and EA advisor
             * F7 =INDEX(**tx_new_u1_T**,MATCH(Tsnulist,snulist,0))
         2. Copy the formula down to all rows in column F, TX_CURR (<1) [PMTCT_EID]
         3. Rename the header to TX_CURR (<1) [**TX_NEW <1**]
+        
+5. EA HTC pulling wrong from SNU list
+    - Issue: The current formulas that pull the HTC data into the EA target tab use the wrong SNU list. They use SNU instead of SNU_HTC. This needs to be changed in four columns: "HTC_TST (excluding PMTCT & VMMC)" "HTC PITC" "HTC VCT" and "HTC CBCT"
+    - Affected Tab: SNU Targets for EA
+    - Fix:
+        1. In columns S through V, search and replace "snu,0" with "snu_htc,0"
+    
+        
+        
