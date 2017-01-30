@@ -48,3 +48,9 @@ Here is a running list of issues that affect the Data Pack for SI and EA advisor
   - Fix:
         1. Replace MATCH(Tsnulist,**snu**,0)" with MATCH(Tsnulist,**htc_snulis**,0) in columns S, T, U, and V
             * S7 = INDEX(T_htc_need,MATCH(Tsnulist, **htc_snu**,0))
+
+6. OVC_SERV TA IM targets not adding correctly
+  - Issue: The current formula is not correctly adding up the TA OVC_SERV targets on the IM targetting tab.
+  - Affected Tab: PBAC IM Targets
+  - Fix: 
+        1. Replace =SUMIFS(D_ovc_serv_fy18,D_mech,P_mech,D_type,AP_indtype) with =SUMIFS(D_ovc_serv_fy18,D_mech,P_mech,D_type,P_indtype)            in column AG.
